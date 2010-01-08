@@ -4,6 +4,7 @@ class StatsController < ApplicationController
     @stat = Stat.new(:amount => params[:stat][:amount])
     @stat.user = @user
     @stat.save!
+    @user.save!
 
     # 207 Multi-Status (WebDAV) (RFC 2518)
     render :nothing => true, :status => 207
